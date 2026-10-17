@@ -1,0 +1,24 @@
+name: Build FlashMii
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Wii toolchain pieces
+        run: dkp-pacman -Syu --noconfirm --needed wii-dev gamecube-tools
+      - name: Show environment
+        run: |
+          echo "DEVKITPRO=$DEVKITPRO"
+          ls $DEVKITPRO/devkitPPC/bin | head
+          ls $DEVKITPRO/tools/bin
+          ls $DEVKITPRO/libogc/lib/wii
+      - name: Build
+        run: make package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FlashMii
+          path: apps/FlashMii
