@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+  <name>FlashMii</name>
+  <coder>You</coder>
+  <version>1.0</version>
+  <release_date>20261017000000</release_date>
+  <short_description>Press A to get flashbanged</short_description>
+  <long_description>A flash of white and a loud ringing. Turn your volume down. Not for anyone sensitive to flashing lights.</long_description>
+</app>
