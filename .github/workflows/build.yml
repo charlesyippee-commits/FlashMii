@@ -8,6 +8,8 @@ jobs:
     container: devkitpro/devkitppc:latest
     steps:
       - uses: actions/checkout@v4
+      - name: List repo files
+        run: ls -la && ls -la apps || true
       - name: Install Wii toolchain pieces
         run: dkp-pacman -Syu --noconfirm --needed wii-dev gamecube-tools
       - name: Show environment
