@@ -19,6 +19,7 @@ boot.dol: boot.elf
 	elf2dol boot.elf boot.dol
 
 package: boot.dol
+	mkdir -p apps/FlashMii
 	cp boot.dol apps/FlashMii/boot.dol
 
 clean:
